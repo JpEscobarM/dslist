@@ -31,8 +31,12 @@ public class Game {
 	
 	private String imgUrl;
 	
+
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
 	
+
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	
@@ -55,6 +59,7 @@ public class Game {
 		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
+		
 		this.longDescription = longDescription;
 	}
 
