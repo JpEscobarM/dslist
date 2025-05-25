@@ -100,4 +100,4 @@ void updateBelongingPosition(Long listId, Long gameId, Integer newPosition);
 ```
 
 ### Script Docker Compose
-[Docker-compose.yml]([https://raw.githubusercontent.com/JpEscobarM/dslist/refs/heads/main/docker/docker-compose.yml](https://gist.github.com/JpEscobarM/629b7d2d6ec9665e2dea6e42a993fa75)).
+[Docker-compose.yml](https://gist.github.com/JpEscobarM/629b7d2d6ec9665e2dea6e42a993fa75).
