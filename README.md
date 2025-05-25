@@ -5,7 +5,7 @@
 
 DSList é uma aplicação backend desenvolvida para fins de estudo no **Intensivão Java Spring** evento organizado pela [DevSuperior](https://devsuperior.com.br/).
 
-O projeto consiste em uma API backend que organiza e persiste dados sobre jogos e organiza em listas para serem exibidos no frontend.
+O projeto consiste em uma API backend que persiste dados sobre jogos e organiza em listas para serem exibidos no frontend.
 
 ## Modelo de Domínio
 ![Modelo de Domínio](https://raw.githubusercontent.com/JpEscobarM/dslist/refs/heads/main/dslist/src/main/resources/assets/dslist-model.png)
