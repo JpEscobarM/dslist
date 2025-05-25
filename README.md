@@ -148,7 +148,6 @@ Retorna todas as listas de jogos disponíveis no sistema.
 
 ```json
 [
-[
     {
         "id": 1,
         "name": "Aventura e RPG"
@@ -157,7 +156,6 @@ Retorna todas as listas de jogos disponíveis no sistema.
         "id": 2,
         "name": "Jogos de plataforma"
     }
-]
 ]
 ```
 
@@ -183,6 +181,20 @@ Retorna todos os jogos que pertencem a uma lista específica, identificada pelo 
     "imgUrl": "https://...",
     "shortDescription": "Lorem ipsum..."
   }
+]
+```
+
+### 5.Reordenar jogos dentro de uma lista
+
+**POST** /lists/{listId}/replacement
+Reorganiza a ordem dos jogos dentro de uma lista. Move um jogo da posição de origem para uma nova posição de destino.
+
+```json
+[
+{
+  "sourceIndex": 2,
+  "destinationIndex": 4
+}
 ]
 ```
 
