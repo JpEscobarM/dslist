@@ -115,12 +115,12 @@ Retorna uma lista com todos os jogos cadastrados no sistema.
     "imgUrl": "https://...",
     "shortDescription": "Lorem ipsum..."
   },
-	...
+	//restante da lista...
 ]
 ```
 ### 2.Bsucar detalhes por ID
 
-**GET** /games/{id}
+**GET**  `/games/{id}`
 
 Retorna os detalhes completos de um jogo específico, com base no seu ID.
 
@@ -142,7 +142,7 @@ Retorna os detalhes completos de um jogo específico, com base no seu ID.
 
 ### 3.Listar todas as listas de jogos
 
-**GET** /lists
+**GET** `/lists`
 
 Retorna todas as listas de jogos disponíveis no sistema.
 
@@ -161,7 +161,7 @@ Retorna todas as listas de jogos disponíveis no sistema.
 
 ### 4.Listar todas as listas de jogos
 
-**GET** /lists/{listId}/games
+**GET** `/lists/{listId}/games`
 
 Retorna todos os jogos que pertencem a uma lista específica, identificada pelo seu ID.
 
@@ -186,7 +186,8 @@ Retorna todos os jogos que pertencem a uma lista específica, identificada pelo 
 
 ### 5.Reordenar jogos dentro de uma lista
 
-**POST** /lists/{listId}/replacement
+**POST** `/lists/{listId}/replacement`
+
 Reorganiza a ordem dos jogos dentro de uma lista. Move um jogo da posição de origem para uma nova posição de destino.
 
 ```json
