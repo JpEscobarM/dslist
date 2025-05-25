@@ -45,7 +45,7 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
 ### application-dev.properties
-
+Usado para desenvolver localmente com PostgreSQL (via Docker + pgAdmin) e gerar scripts SQL a partir das entidades JPA (Jakarta Persistence)
 ```
 #spring.jpa.properties.jakarta.persistence.schema-generation.create-source=metadata
 #spring.jpa.properties.jakarta.persistence.schema-generation.scripts.action=create
@@ -55,6 +55,17 @@ spring.jpa.properties.hibernate.format_sql=true
 spring.datasource.url=jdbc:postgresql://localhost:5432/dscatalog
 spring.datasource.username=postgres
 spring.datasource.password=1234567
+
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+spring.jpa.hibernate.ddl-auto=none
+```
+### application-prod.properties
+Configuração segura e externa para rodar a aplicação com banco de dados real (PostgreSQL), usando variáveis de ambiente para esconder credenciais e não gerar/alterar a estrutura do banco automaticamente.
+```
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
 
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
