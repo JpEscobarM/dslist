@@ -62,6 +62,7 @@ spring.jpa.hibernate.ddl-auto=none
 ```
 ### application-prod.properties
 Configuração segura e externa para rodar a aplicação com banco de dados real (PostgreSQL), usando variáveis de ambiente para esconder credenciais e não gerar/alterar a estrutura do banco automaticamente.
+
 ```
 spring.datasource.url=${DB_URL}
 spring.datasource.username=${DB_USERNAME}
@@ -71,3 +72,31 @@ spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 spring.jpa.hibernate.ddl-auto=none
 ```
+### system.properties
+```
+java.runtime.version=17
+```
+
+### GameRepository
+
+```java
+@Query(nativeQuery = true, value = """
+		SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
+		tb_game.short_description AS shortDescription, tb_belonging.position
+		FROM tb_game
+		INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
+		WHERE tb_belonging.list_id = :listId
+		ORDER BY tb_belonging.position
+			""")
+List<GameMinProjection> searchByList(Long listId);
+```
+
+### GameListRepository
+
+```java
+@Modifying
+@Query(nativeQuery = true, value = "UPDATE tb_belonging SET position = :newPosition WHERE list_id = :listId AND game_id = :gameId")
+void updateBelongingPosition(Long listId, Long gameId, Integer newPosition);
+```
+
+### Script Docker Compose
