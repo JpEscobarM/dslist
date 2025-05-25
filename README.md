@@ -98,6 +98,93 @@ List<GameMinProjection> searchByList(Long listId);
 @Query(nativeQuery = true, value = "UPDATE tb_belonging SET position = :newPosition WHERE list_id = :listId AND game_id = :gameId")
 void updateBelongingPosition(Long listId, Long gameId, Integer newPosition);
 ```
+## Endpoints
+
+### 1. Listar todos os jogos
+**GET** `/games`
+
+Retorna uma lista com todos os jogos cadastrados no sistema.
+
+**Exemplo de resposta:**
+```json
+[
+  {
+    "id": 1,
+    "title": "Mass Effect Trilogy",
+    "year": 2012,
+    "imgUrl": "https://...",
+    "shortDescription": "Lorem ipsum..."
+  },
+	...
+]
+```
+### 2.Bsucar detalhes por ID
+
+**GET** /games/{id}
+
+Retorna os detalhes completos de um jogo específico, com base no seu ID.
+
+```json
+[
+{
+    "id": 5,
+    "title": "Ghost of Tsushima",
+    "year": 2012,
+    "genre": "Role-playing (RPG), Adventure",
+    "platforms": "XBox, Playstation, PC",
+    "score": 4.6,
+    "imgUrl": "https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/5.png",
+    "shortDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit esse officiis corrupti unde repellat non quibusdam! Id nihil itaque ipsum!",
+    "longDescription": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum illum placeat eligendi, quis maiores veniam. Incidunt dolorum, nisi deleniti dicta odit voluptatem nam provident temporibus reprehenderit blanditiis consectetur tenetur. Dignissimos blanditiis quod corporis iste, aliquid perspiciatis architecto quasi tempore ipsam voluptates ea ad distinctio, sapiente qui, amet quidem culpa."
+}
+]
+```
+
+### 3.Listar todas as listas de jogos
+
+**GET** /lists
+
+Retorna todas as listas de jogos disponíveis no sistema.
+
+```json
+[
+[
+    {
+        "id": 1,
+        "name": "Aventura e RPG"
+    },
+    {
+        "id": 2,
+        "name": "Jogos de plataforma"
+    }
+]
+]
+```
+
+### 4.Listar todas as listas de jogos
+
+**GET** /lists/{listId}/games
+
+Retorna todos os jogos que pertencem a uma lista específica, identificada pelo seu ID.
+
+```json
+[
+  {
+    "id": 6,
+    "title": "Super Mario World",
+    "year": 1990,
+    "imgUrl": "https://...",
+    "shortDescription": "Lorem ipsum..."
+  },
+  {
+    "id": 7,
+    "title": "Hollow Knight",
+    "year": 2017,
+    "imgUrl": "https://...",
+    "shortDescription": "Lorem ipsum..."
+  }
+]
+```
 
 ### Script Docker Compose
 [Docker-compose.yml](https://gist.github.com/JpEscobarM/629b7d2d6ec9665e2dea6e42a993fa75).
