@@ -15,7 +15,7 @@ O projeto consiste em uma API backend que persiste dados sobre jogos e organiza 
 - Java
 - Spring Boot
 - JPA / Hibernate
-- Maeven
+- Maven
 
 ## Trechos de código
 ### aplication.properties
