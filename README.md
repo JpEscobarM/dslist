@@ -118,7 +118,7 @@ Retorna uma lista com todos os jogos cadastrados no sistema.
 	//restante da lista...
 ]
 ```
-### 2.Bsucar detalhes por ID
+### 2.Buscar detalhes por ID
 
 **GET**  `/games/{id}`
 
